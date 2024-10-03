@@ -5,32 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Our Products</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/products">Products</a>
-        </nav>
+        <div class="navbar">
+            <h1 class="logo">E-Commerce Hub</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products" class="active">Products</a></li>
+                    <li><a href="/vendors">Vendors</a></li>
+                    <li><a href="/about">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
         <h2>Available Products</h2>
-        <div class="product-grid">
-            {% for product in products %}
-            <div class="product-card">
-                <img src="{{ product['product_image_url'] }}" alt="{{ product['product_name'] }}">
-                <h3>{{ product['product_name'] }}</h3>
-                <p>{{ product['product_description'] }}</p>
-                <p class="price">Price: ${{ product['product_price'] }}</p>
-                <p>Stock: {{ product['product_stock'] }}</p>
-                <button class="btn-secondary">Add to Cart</button>
+
+        <!-- Scrollable Products Container -->
+        <div class="product-scroll-container">
+            <!-- Left Scroll Button -->
+            <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+
+            <!-- Products Grid -->
+            <div class="product-grid">
+                {% for product in products %}
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/products/' + product['product_image']) }}" alt="{{ product['product_name'] }}">
+                    <h3>{{ product['product_name'] }}</h3>
+                    <p>{{ product['product_description'] }}</p>
+                    <p class="price">Price: ${{ product['product_price'] }}</p>
+                    <button class="btn-secondary">Add to Cart</button>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+
+            <!-- Right Scroll Button -->
+            <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
         </div>
     </main>
+
     <footer>
-        <p>&copy; 2024 Multi-Vendor E-Commerce</p>
+        <p>&copy; 2024 E-Commerce Hub. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for Scrolling -->
+    <script>
+        function scrollLeft() {
+            document.querySelector('.product-grid').scrollBy({
+                left: -250,  // Adjust the scroll distance (250px)
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollRight() {
+            document.querySelector('.product-grid').scrollBy({
+                left: 250,  // Adjust the scroll distance (250px)
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>

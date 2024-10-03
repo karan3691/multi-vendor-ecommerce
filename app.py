@@ -18,12 +18,14 @@ def index():
 # Vendors Page
 @app.route('/vendors')
 def vendors():
-    # Fetch vendors from the database
-    vendors = [
-        {'name': 'Vendor 1', 'description': 'High-quality electronics vendor.', 'contact_info': 'vendor1@example.com'},
-        {'name': 'Vendor 2', 'description': 'Specializes in furniture.', 'contact_info': 'vendor2@example.com'}
-    ]
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT vendor_name, vendor_email, vendor_address, vendor_phone, vendor_image FROM Vendors")
+    vendors = cursor.fetchall()
+    cursor.close()
+    conn.close()
     return render_template('vendors.html', vendors=vendors)
+
 
 # About Us Page
 @app.route('/about')
