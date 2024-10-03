@@ -92,3 +92,5 @@ VALUES
 (2, 'Smartwatch Z', 'Stylish smartwatch with health monitoring features', 249.99, 'Electronics', 100, 'smartwatch_z.jpg'),
 (2, 'Gaming Laptop X1', 'Powerful gaming laptop with cutting-edge graphics', 1299.99, 'Electronics', 30, 'gaming_laptop_x1.jpg'),
 (2, 'Wireless Earbuds', 'True wireless earbuds with noise cancellation', 149.99, 'Electronics', 80, 'wireless_earbuds.jpg');
+
+
