@@ -6,7 +6,7 @@ def get_db_connection():
     connection = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="your-password", 
+        password="Kirito@213", 
         database="multi_vendor_ecommerce"
     )
     return connection
