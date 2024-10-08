@@ -9,12 +9,16 @@ This is an ongoing project aimed at developing a **multi-vendor e-commerce platf
 - **Vendors Page**: Displays a list of vendors fetched from a MySQL database.
 - **About Us Page**: Tells about the mission and vision of the E-Commerce Hub
 - **Product Details**: Basic product information, including name, price, stock, and description.
+- **Register**: Register with username and password.
+- **Login**: Login with the username and password.
+- **Cart**: Added cart function to checkout your products.
+
 
 ## How to Run the Project
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/ecommerce-platform.git
+   git clone https://github.com/karan3691/ecommerce-platform.git
    ```
 
 2. Install required dependencies
@@ -45,7 +49,7 @@ This is an ongoing project aimed at developing a **multi-vendor e-commerce platf
 
 ## Known Issues
 
-- Product images are not in the same resolution which makes the product section a little bit sloppy.
+- Issues with fetching product details into cart.
 
 ## Contributing
 This project is in its early stages, and contributions are welcome. Please feel free to submit issues and pull requests.
