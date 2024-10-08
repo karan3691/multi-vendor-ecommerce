@@ -1,4 +1,5 @@
 /* General Body Styles */
+/* homepage*/
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -9,7 +10,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #4CAF50; /* Header background color */
+    background-color: #7b5109; /* Header background color */
     padding: 15px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -46,12 +47,12 @@ header {
 }
 
 .navbar ul li a:hover {
-    color: #4CAF50; /* Change color on hover */
+    color: #7b5109; /* Change color on hover */
 }
 
 /* Active link style */
 .navbar ul li a.active {
-    background-color: #4CAF50; /* Highlight active link */
+    background-color: #7b5109; /* Highlight active link */
     color: white; /* Ensure active link text is visible */
 }
 
@@ -61,8 +62,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #4CAF50 50%, #2c7a31);
-    color: white;
+    background: linear-gradient(135deg, #7b5109 50%, #2c7a31);
+    color: rgb(210, 210, 210);
     text-align: center;
 }
 
@@ -79,8 +80,8 @@ header {
 
 .btn-primary {
     padding: 15px 25px;
-    background-color: white;
-    color: #4CAF50;
+    background-color: rgb(255, 255, 255);
+    color: #604c06;
     border-radius: 30px;
     text-transform: uppercase;
     font-weight: bold;
@@ -314,17 +315,6 @@ footer {
     margin-top: 40px;
 }
 
-
-
-/* General Body Styles */
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4; /* Light background for contrast */
-}
-
 /* Header and Navbar */
 .header {
     background-color: #4CAF50;
@@ -427,78 +417,5 @@ body {
     font-size: 14px;
 }
 
-/* Footer */
-footer {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 40px;
-}
 
-/* Scrollable Product Grid with Buttons */
-.product-scroll-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
 
-.product-grid {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px;
-    width: 100%;
-}
-
-.scroll-btn {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    font-size: 18px;
-}
-
-.scroll-btn.left {
-    left: 0;
-}
-
-.scroll-btn.right {
-    right: 0;
-}
-
-.scroll-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Scrollable Product Grid */
-.product-scroll-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.product-grid {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px;
-    width: 100%;
-}
-
-.product-grid::-webkit-scrollbar {
-    height: 8px;
-}
-
-.product-grid::-webkit-scrollbar-thumb {
-    background-color: #4CAF50;
-    border-radius: 10px;
-}

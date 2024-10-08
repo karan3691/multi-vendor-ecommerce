@@ -1,0 +1,191 @@
+/* General Body Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* Header Styles */
+header {
+    background-color: #7b5109; /* Header background color */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styles */
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px; /* Spacing between links */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 10px 15px; /* Added padding for a larger clickable area */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.navbar ul li a:hover {
+    color: #7b5109; /* Change color on hover */
+}
+
+/* Active link style */
+.navbar ul li a.active {
+    background-color: #7b5109; /* Highlight active link */
+    color: white; /* Ensure active link text is visible */
+}
+
+/* Main Content */
+main {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Filter Section */
+.product-filter {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-filter h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.filter-options a {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #7b5109;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.filter-options a:hover {
+    background-color: #45a049;
+}
+
+/* Scrollable Product Container */
+.product-scroll-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-y: scroll; /* Enable vertical scroll */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    max-height: 600px; /* Set a maximum height for the scrollable area */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+}
+
+/* Remove scroll buttons (not needed for vertical scroll) */
+.scroll-btn {
+    display: none;
+}
+
+/* Product Card */
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #777;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button */
+.btn-secondary {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #45a049;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Product Grid Scrollbar Customization (Optional) */
+.product-scroll-container::-webkit-scrollbar {
+    width: 10px; /* Width of the vertical scrollbar */
+}
+
+.product-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #7b5109; /* Scrollbar color */
+    border-radius: 5px;
+}
+
+.product-scroll-container::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+}

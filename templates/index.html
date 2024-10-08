@@ -17,6 +17,15 @@
                     <li><a href="/products">Products</a></li>
                     <li><a href="/vendors">Vendors</a></li>
                     <li><a href="/about">About Us</a></li>
+
+                    <!-- User Authentication Links -->
+                    {% if session.get('username') %}
+                        <li><a href="/cart">My Cart</a></li>
+                        <li><a href="/logout">Logout ({{ session['username'] }})</a></li>
+                    {% else %}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -37,22 +46,28 @@
         <div class="product-grid">
             <!-- Dynamic Products with hover effect -->
             <div class="product-card">
-                <img src="{{ url_for('static', filename='images/products/product1.jpg') }}" alt="Product 1">
-                <h3>Product 1</h3>
+                <img src="{{ url_for('static', filename='images/products/product1.jpg') }}" alt="Men's Casual Shirt">
+                <h3>Men's Casual Shirt</h3>
                 <p>$20.00</p>
-                <button class="btn-secondary">Add to Cart</button>
+                <form action="/add_to_cart/{{ 1 }}" method="post">
+                    <button class="btn-secondary">Add to Cart</button>
+                </form>
             </div>
             <div class="product-card">
-                <img src="{{ url_for('static', filename='images/products/product2.jpg') }}" alt="Product 2">
-                <h3>Product 2</h3>
+                <img src="{{ url_for('static', filename='images/products/product2.jpg') }}" alt="Denim Shirt">
+                <h3>Denim Shirt</h3>
                 <p>$45.00</p>
-                <button class="btn-secondary">Add to Cart</button>
+                <form action="/add_to_cart/{{ 2 }}" method="post">
+                    <button class="btn-secondary">Add to Cart</button>
+                </form>
             </div>
             <div class="product-card">
-                <img src="{{ url_for('static', filename='images/products/product3.jpg') }}" alt="Product 3">
-                <h3>Product 3</h3>
+                <img src="{{ url_for('static', filename='images/products/product3.jpg') }}" alt="Red Dress">
+                <h3>Red Dress</h3>
                 <p>$15.00</p>
-                <button class="btn-secondary">Add to Cart</button>
+                <form action="/add_to_cart/{{ 3 }}" method="post">
+                    <button class="btn-secondary">Add to Cart</button>
+                </form>
             </div>
         </div>
     </section>
@@ -62,15 +77,15 @@
         <div class="testimonials-grid">
             <div class="testimonial">
                 <p>"I love the variety of products! The service is excellent, and delivery is always on time."</p>
-                <span>- Jane Doe</span>
+                <span>- Sneha</span>
             </div>
             <div class="testimonial">
                 <p>"The user experience is great, and I found exactly what I was looking for at the best price."</p>
-                <span>- John Smith</span>
+                <span>- Raunak</span>
             </div>
             <div class="testimonial">
                 <p>"A one-stop shop for all my needs. Super satisfied with the customer service."</p>
-                <span>- Sarah Lee</span>
+                <span>- Kiran</span>
             </div>
         </div>
     </section>

@@ -94,3 +94,88 @@ VALUES
 (2, 'Wireless Earbuds', 'True wireless earbuds with noise cancellation', 149.99, 'Electronics', 80, 'wireless_earbuds.jpg');
 
 
+SELECT DISTINCT p.product_id, p.product_name, p.product_description, p.product_price, p.product_category, p.product_stock, v.vendor_name
+FROM Products p
+JOIN Vendors v ON p.vendor_id = v.vendor_id
+ORDER BY p.product_name;
+
+
+-- if there is duplicacy in products
+SELECT product_name, COUNT(*)
+FROM Products
+GROUP BY product_name
+HAVING COUNT(*) > 1;
+
+DELETE p1
+FROM Products p1
+INNER JOIN Products p2 
+WHERE 
+    p1.product_id > p2.product_id 
+    AND p1.product_name = p2.product_name;
+
+
+SELECT DISTINCT product_category FROM Products;
+
+UPDATE Products
+SET product_category = 'Fashion'
+ WHERE product_category = 'Clothing';
+
+ UPDATE Products
+SET product_category = 'Home'
+WHERE product_name LIKE '%Home%';  -- Or adjust based on your product
+
+ UPDATE Products
+SET product_category = 'Sports'
+WHERE product_name LIKE '%Sports%';  -- Or adjust based on your produc
+
+INSERT INTO Products (vendor_id, product_name, product_description, product_price, product_category, product_stock, product_image)
+     VALUES
+    (1, 'Sports T-shirt', 'Comfortable sportswear', 19.99, 'Sports', 50, 'sports_tshirt.jpg'),
+     (1, 'Home Decor Lamp', 'Stylish table lamp for home', 29.99, 'Home', 30, 'home_decor_lamp.jpg');
+
+SELECT DISTINCT product_category FROM Products;
+
+-- For Home Category Products
+UPDATE Products 
+SET product_image = 'home_decor_1.jpg' 
+WHERE product_category = 'Home';
+
+UPDATE Products 
+SET product_image = 'sport_tshirt_1.jpg' 
+WHERE product_category = 'Sports';
+
+UPDATE Products 
+SET product_image = 'sport_tshirt_2.jpg' 
+WHERE product_category = 'Sports';
+
+UPDATE Products 
+SET product_image = 'sport_tshirt_3.jpg' 
+WHERE product_category = 'Sports';
+
+SELECT * FROM Products WHERE product_category = 'Sports';
+
+-- Inserting multiple Sports products
+INSERT INTO Products (vendor_id, product_name, product_description, product_price, product_category, product_stock, product_image)
+VALUES 
+(2, 'NotBrand', 'Comfortable sports t-shirt for workouts', 19.99, 'Sports', 100, 'sport_tshirt_1.jpg'),
+(2, 'BorFend', 'Breathable sports t-shirt for active wear', 22.99, 'Sports', 120, 'sport_tshirt_2.jpg'),
+(2, 'Hooligans', 'Stylish sports t-shirt with modern design', 25.99, 'Sports', 80, 'sport_tshirt_3.jpg');
+
+SELECT product_name, COUNT(*) 
+FROM Products 
+WHERE product_category = 'Sports' 
+GROUP BY product_name 
+HAVING COUNT(*) > 1;
+
+-- Step 1: Create a temporary table to store unique vendor_id's
+CREATE TEMPORARY TABLE tmp_vendors AS
+SELECT MIN(vendor_id) AS vendor_id
+FROM Vendors
+GROUP BY vendor_name;
+
+-- Step 2: Delete duplicates from the original Vendors table
+DELETE FROM Vendors
+WHERE vendor_id NOT IN (SELECT vendor_id FROM tmp_vendors);
+
+-- Step 3: Drop the temporary table
+DROP TEMPORARY TABLE tmp_vendors;
